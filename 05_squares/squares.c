@@ -53,7 +53,7 @@ void squares(int size1, int x_offset, int y_offset, int size2) {
       //    ((y is between y_offset and y_offset + size2) AND
       //     x is equal to either x_offset OR x_offset + size2 -1)
       // if so, print a *
-	    if((isInRange(x, x_offset, x_offset+size2)==1 && isAtBorder(y, y_offset, y_offset+size2-1))||(isInRange(y, y_offset, y_offset+size2) && isAtBorder(x, x_offset,x_offset+size2-1)))
+	    if((isInRange(x, x_offset, x_offset+size2)==1 && isAtBorder(y, y_offset, y_offset+size2-1)==1)||(isInRange(y, y_offset, y_offset+size2)==1 && isAtBorder(x, x_offset,x_offset+size2-1)==1))
 	      printf("*");
       //if not,
       // check if EITHER
@@ -61,7 +61,7 @@ void squares(int size1, int x_offset, int y_offset, int size2) {
       // OR
       //    y is less than size1 AND (x is either 0 or size1-1)
       //if so, print a #
-	    else if((x<size1 && isAtBorder(y, 0, size1-1)) || (y<size1 && isAtBorder(x, 0, size1-1)))
+	    else if((x<=size1 && isAtBorder(y, 0, size1-1)==1) || (y<=size1 && isAtBorder(x, 0, size1-1)==1))
 	      printf("#");
       //else print a space
 	    else
