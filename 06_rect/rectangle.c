@@ -38,14 +38,32 @@ rectangle canonicalize(rectangle r) {
 
 rectangle intersection(rectangle r1, rectangle r2) {
   //WRITE THIS FUNCTION
-  rectangle ret;
-  r1 = r1.canonicalize(r1);
-  r2 = r2.canonicalize(r2);
-  ret.x = max(r1.x, r2.x);
-  ret.y = max(r1.y, r2.y);
-  ret.width = min(r1.width, r2.width);
-  ret.height = min(r1.height, r2.height);
+  const rectangle EMPTY = {0, 0, 0, };
+
+  r1 = canonicalize(r1);
+  r2 = canonicalize(r2);
+
+  int x_left = max(r1.x, r2.x);
+  int x_right = min(r1.x + r1.width, r2.x + r2.width);
+  if(x_left > x_right){
+    return EMPTY;
+  }
+
+  int y_bottom = max(r1.y, r2.y);
+  int y_top = min(r1.y + r1.height, r2.y + r2.height);
+  if(y_bottom > y_top){
+    return EMPTY;
+  }
+
+  rectangle ret = {
+    x_left,
+    y_bottom,
+    x_right - x_left,
+    y_top - y_bottom
+  };
+
   return ret;
+  
 }
 
 //You should not need to modify any code below this line
