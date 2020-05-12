@@ -1,12 +1,13 @@
-Grading at Mon May 11 11:01:41 UTC 2020
+Grading at Tue May 12 04:07:23 UTC 2020
 Attempting to compile rectangle.c
-rectangle.c: In function ‘intersection’:
-rectangle.c:42:10: error: ‘rectangle {aka struct rect}’ has no member named ‘canonicalize’
-   r1 = r1.canonicalize(r1);
-          ^
-rectangle.c:43:10: error: ‘rectangle {aka struct rect}’ has no member named ‘canonicalize’
-   r2 = r2.canonicalize(r2);
-          ^
-The code did not compile!
+Tring to run rectangle
+Your file matched the expected output
+removing your main() and replacing it with out own to run more tests...
+#################################################
+testcase1:
+testcase1 passed
+#################################################
+testcase2:
+testcase2 passed
 
-Overall Grade: F
+Overall Grade: A
