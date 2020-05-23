@@ -1,18 +1,18 @@
-Grading at Sat May 23 04:30:06 UTC 2020
+Grading at Sat May 23 04:34:47 UTC 2020
 **Testing broken implementation 10 **
 -------------------------------------
 
-Failed on {-1, 4, 7, 9, 11, -8, -2, -1, 32, 33}
+Failed on 2,-3,5,6,8
 
 **Testing broken implementation 11 **
 -------------------------------------
 
-Failed on {1}
+Failed on 2,-3,5,6,8
 
 **Testing broken implementation 1 **
 -------------------------------------
 
-Failed on {2, 2, 2, 4}
+Failed on 2,2,2,3
 
 **Testing broken implementation 2 **
 -------------------------------------
@@ -22,6 +22,42 @@ Failed on NULL
 **Testing broken implementation 3 **
 -------------------------------------
 
-Your test program did not identify /usr/local/l2p/subseq/subseq3.o as broken!
+Failed on -2
 
-Overall Grade: FAILED
+**Testing broken implementation 4 **
+-------------------------------------
+
+Failed on NULL
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+Failed on 2,-3,5,6,8
+
+**Testing broken implementation 6 **
+-------------------------------------
+
+Failed on 5
+
+**Testing broken implementation 7 **
+-------------------------------------
+
+Failed on 1,2,3,2
+
+**Testing broken implementation 8 **
+-------------------------------------
+
+Failed on 1,2,3,2
+
+**Testing broken implementation 9 **
+-------------------------------------
+
+Failed on 2,-3,5,6,8
+
+**Testing correct implementation **
+-------------------------------------
+
+
+All test programs were handled correctly
+
+Overall Grade: PASSED
