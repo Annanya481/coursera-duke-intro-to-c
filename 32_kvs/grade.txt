@@ -1,55 +1,19 @@
-Grading at Wed Jun 10 06:25:40 UTC 2020
+Grading at Wed Jun 10 13:07:41 UTC 2020
 Attempting to compile:
-kv.c: In function ‘readKVs’:
-kv.c:15:3: error: ISO C forbids nested functions [-Werror=pedantic]
-   int findEqIdx(char * line){
-   ^
-kv.c:28:3: error: ISO C forbids nested functions [-Werror=pedantic]
-   char * getKey(char * line){
-   ^
-kv.c:39:3: error: ISO C forbids nested functions [-Werror=pedantic]
-   char *getValue(char *line){
-   ^
-kv.c:59:3: error: ISO C forbids nested functions [-Werror=pedantic]
-   kvpair_t * parseKV(char *line){
-   ^
-kv.c:77:24: error: invalid type argument of unary ‘*’ (have ‘size_t {aka long unsigned int}’)
-   while(getline(&line, *size, f) >= 0){
-                        ^
-kv.c:79:22: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
-     arr -> array[sz] = parseKV(line);
-                      ^
-kv.c:86:7: error: ‘kvarray_t {aka struct _kvarray_t}’ has no member named ‘sz’
-   arr -> sz = sz;
-       ^
-kv.c: In function ‘freeKVs’:
-kv.c:93:18: error: ‘kvarray_t {aka struct _kvarray_t}’ has no member named ‘sz’
-   int sz = pairs -> sz;
-                  ^
-kv.c:95:29: error: request for member ‘key’ in something not a structure or union
-     free((pairs -> array[i])-> key);
-                             ^
-kv.c:96:29: error: request for member ‘value’ in something not a structure or union
-     free((pairs -> array[i])-> value);
-                             ^
-kv.c: In function ‘printKVs’:
-kv.c:105:21: error: ‘kvarray_t {aka struct _kvarray_t}’ has no member named ‘sz’
-   size_t sz = pairs -> sz;
-                     ^
-kv.c:108:14: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
-     temp_kvp = pairs->array[i];
-              ^
-kv.c: In function ‘lookupValue’:
-kv.c:115:20: error: ‘kvarray_t {aka struct _kvarray_t}’ has no member named ‘sz’
-   size_t sz = pairs->sz;
-                    ^
-kv.c:117:37: error: request for member ‘key’ in something not a structure or union
-     if(strcmp(key, (pairs->array[i])->key)==0){
-                                     ^
-kv.c:118:31: error: request for member ‘value’ in something not a structure or union
-       return (pairs->array[i])->value;
-                               ^
-cc1: all warnings being treated as errors
-The code did not compile!
+#################################################
+testcase1:
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
+#################################################
+testcase2:
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
+#################################################
+testcase3:
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 
-Overall Grade: F
+Overall Grade: A
