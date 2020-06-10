@@ -42,7 +42,21 @@ void addRandomMine(board_t * b) {
 
 board_t * makeBoard(int w, int h, int numMines) {
   //WRITE ME!
-  return NULL;
+  board_t * myBoard = malloc(sizeof(board_t));
+  myBoard -> width = w;
+  myBoard -> height = h;
+  myBoard -> totalMines = numMines;
+  myBoard -> board = malloc(h*sizeof(*(myBoard -> board)));
+  for(int i=0; i<h; i++){
+    *(myBoard -> board + i) = malloc(w*sizeof(int));
+    for(int j=0; j<w; j++){
+      *(*(myBoard -> board +i)+j) = UNKNOWN;
+    }
+  }
+  for(int k=0; k<numMines; k++){
+    addRandomMine(myBoard);
+  }
+  return myBoard;
 }
 void printBoard(board_t * b) {    
   int found = 0;
@@ -96,7 +110,25 @@ void printBoard(board_t * b) {
 }
 int countMines(board_t * b, int x, int y) {
   //WRITE ME!
-  return 0;
+  
+  int height = b -> height;
+  int width = b -> width;
+  int ** board = b -> board;
+  int count = 0;
+  for(int row_off=-1; row_off<2; row_off++){
+    for(int col_off=-1; col_off<2; col_off++){
+      int row = y+row_off;
+      int col = x+col_off;
+      if((row>=0 && row<height) && (col>=0 && col<width)){
+	if(!(row_off==0 && (col_off==0))){
+	  if(IS_MINE(board[row][col])){
+	    count++;
+	  }
+	}
+      }
+    }
+  }
+  return count;
 }
 int click (board_t * b, int x, int y) {
   if (x < 0 || x >= b->width ||
@@ -119,11 +151,32 @@ int click (board_t * b, int x, int y) {
 
 int checkWin(board_t * b) {
   //WRITE ME!
-  return 0;
+  int winFlag = 1;
+  int width = b->width;
+  int height = b->height;
+  int ** board = b->board;
+
+  for(int row=0; row<height; row++){
+    for(int col=0; col<width; col++){
+      if(board[row][col] == UNKNOWN){
+	winFlag = 0;
+	return winFlag;
+      }
+    }
+  }
+  return winFlag;
 }
 
 void freeBoard(board_t * b) {
   //WRITE ME!
+  int height = b->height;
+  int ** board = b->board;
+
+  for(int i=0; i<height; i++){
+    free(board[i]);
+  }
+  free(board);
+  free(b);
 }
 
 int readInt(char ** linep, size_t * lineszp) {
