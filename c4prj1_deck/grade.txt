@@ -1,13 +1,25 @@
-Grading at Thu Jun 11 03:31:17 UTC 2020
+Grading at Thu Jun 11 03:35:20 UTC 2020
 Compiling deck.c -> deck.o
-deck.c: In function ‘build_remaining_deck’:
-deck.c:98:12: error: ‘hand’ undeclared (first use in this function)
-     temp = hand[i];
-            ^
-deck.c:98:12: note: each undeclared identifier is reported only once for each function it appears in
-deck.c:99:27: error: ‘deck_t {aka struct deck_tag}’ has no member named ‘n_hands’
-     for(size_t j=0; j<temp->n_hands; j++){
-                           ^
-Compilation of deck.c failed
+Compiling eval.c -> eval.o
+Compiling cards.c -> cards.o
+Linking eval.o, deck.o, cards.o, and our tester
+Testing free_deck(deck_t *)
+- Test passed
+Testing add_card_to(deck_t *, card_t)
+- Test passed
+Testing add_empty_card(deck_t *)
+- Test passed
+Testing make_deck_exclude(deck_t *)
+- Test passed
+Testing build_remaining_deck(deck_t **, size_t)
+Testing with 1 hand
+Testing with 2 hands
+Testing with 3 hands
+Testing with 4 hands
+Testing with 5 hands
+Testing with 6 hands
+- Test passed
+Testing get_match_count(deck_t *)
+- Test passed
 
-Overall Grade: F
+Overall Grade: A
