@@ -1,0 +1,11 @@
+Grading at Thu Jun 11 05:30:01 UTC 2020
+Compiling cards.c -> cards.o
+Compiling deck.c -> deck.o
+Compiling input.c -> input.o
+Compiling future.c -> future.o
+future.c:31:43: error: unknown type name ‘future_card_t’
+ void future_cards_from_deck(deck_t *deck, future_card_t *fc){
+                                           ^
+Compilation of future.c failed
+
+Overall Grade: F
