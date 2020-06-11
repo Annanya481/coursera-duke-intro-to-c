@@ -69,7 +69,7 @@ int main(int argc, char ** argv) {
   if(argc == 2){
     n_trails = 10000;
   }else{
-    n_trails = strToInt(argv[2]);
+    n_trails = atoi(argv[2]);
   }
 
   f = fopen(argv[1],"r");
