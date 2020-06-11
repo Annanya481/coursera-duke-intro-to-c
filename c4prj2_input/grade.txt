@@ -1,11 +1,28 @@
-Grading at Thu Jun 11 05:30:01 UTC 2020
+Grading at Thu Jun 11 05:31:35 UTC 2020
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
-future.c:31:43: error: unknown type name ‘future_card_t’
- void future_cards_from_deck(deck_t *deck, future_card_t *fc){
-                                           ^
-Compilation of future.c failed
+Linking input.o, future.o deck.o, cards.o, and our tester
+Testing with input file with 
+ o 1 hand
+ o No unknown/future cards
+Your file matched the expected output
+Test case passed
+Testing with input file with 
+ o Many hands
+ o No unknown/future cards
+Your file matched the expected output
+Test case passed
+Testing with input file with 
+ o Many hands
+ o 1 unknown/future cards per hand
+Your file matched the expected output
+Test case passed
+Testing with input file with 
+ o Many hands
+ o Many unknown/future cards per hand
+Your file matched the expected output
+Test case passed
 
-Overall Grade: F
+Overall Grade: A
