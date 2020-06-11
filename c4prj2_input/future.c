@@ -28,7 +28,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t *ptr){
   (fc->decks[index]).cards[nw_n_cards-1] = ptr;
 }
 
-void future_cards_from_deck(deck_t *deck, future_card_t *fc){
+void future_cards_from_deck(deck_t *deck, future_cards_t *fc){
   if(fc==NULL){
     fprintf(stderr, "Null future cards");
   }
