@@ -1,0 +1,13 @@
+Grading at Thu Jun 11 03:31:17 UTC 2020
+Compiling deck.c -> deck.o
+deck.c: In function ‘build_remaining_deck’:
+deck.c:98:12: error: ‘hand’ undeclared (first use in this function)
+     temp = hand[i];
+            ^
+deck.c:98:12: note: each undeclared identifier is reported only once for each function it appears in
+deck.c:99:27: error: ‘deck_t {aka struct deck_tag}’ has no member named ‘n_hands’
+     for(size_t j=0; j<temp->n_hands; j++){
+                           ^
+Compilation of deck.c failed
+
+Overall Grade: F
