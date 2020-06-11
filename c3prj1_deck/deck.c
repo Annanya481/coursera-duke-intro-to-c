@@ -95,8 +95,8 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands){
   no_ret_d->cards = NULL;
   card_t * temp_c;
   for(size_t i=0; i<n_hands; i++){
-    temp = hand[i];
-    for(size_t j=0; j<temp->n_hands; j++){
+    temp = hands[i];
+    for(size_t j=0; j<temp->n_cards; j++){
       temp_c = temp->cards[j];
       if(temp_c->value != 0){
 	if(deck_contains(no_ret_d, *temp_c)==0){
